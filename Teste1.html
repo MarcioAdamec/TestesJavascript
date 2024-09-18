@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testes Gerais</title>
+
+    </head>
+
+    
+
+    <body>
+
+        <p> Digite as tarefas do dia: </p>
+        <div>
+            <input class="inputClassTarefa" id="inputIdTarefa" />
+            <button class="buttonClassAdd" onclick="
+            
+                addItens();
+            
+            " >Add</button>
+        </div>
+        
+        <p class="pClassItensAdded"></p>
+
+
+        <script>
+
+            let itens = [];
+
+            function addItens(){
+
+                const element =  document.getElementById("inputIdTarefa").value;
+
+                itens.push(element);
+
+                showItems();
+
+            }
+
+            function showItems(){
+
+                let elements = '';
+
+                for( let i = 0; i < itens.length ; i++){
+
+                    elements += `<p> ${itens[i]}</p>`;
+
+                }
+
+                
+                document.querySelector(".pClassItensAdded").innerHTML = 
+                    elements;
+
+            }
+
+
+
+
+        </script>
+
+        
+
+    </body>
+
+
+
+</html>
